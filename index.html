@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Play, Pause and Reset</title>
+    <style>
+        .container{ text-align: center; padding-top: 50px;}
+        button{ padding: 15px; font-size: 16px; cursor: pointer; border: none; margin:20px 2px;}
+        .play{ background: green; color:#fff; }
+        .pause{  background: lightgray;}
+        .reset{ background: lightcoral;}
+        button:hover { opacity: 0.8;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Video Play, Pause and Reset</h1>
+    <div class="video_container">
+        <video id="myVideo" width="320" height="176">
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
+        Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <button class="play" onclick="playVideo()" type="button">Play Video</button>
+    <button class="pause" onclick="pauseVideo()" type="button">Pause Video</button>
+    <button class="reset" onclick="resetVideo()" type="button">Reset Video</button>
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script> 
+    const video = document.getElementById("myVideo"); 
+    
+    const playVideo = function(){
+        console.log('play');
+        video.play(); 
+    }
+    const pauseVideo = function(){
+        console.log('pause');
+        video.pause(); 
+    }
+    const resetVideo = function(){
+        console.log('reset');
+        video.pause(); 
+        video.currentTime = 0;
+    }
+</script> 
+
+    
+</body>
+</html>
